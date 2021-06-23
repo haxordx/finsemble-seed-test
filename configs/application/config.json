@@ -3,10 +3,21 @@
 	"$schema": "../../node_modules/@finsemble/finsemble-core/configs/schemas/fileBasedSchemas/applicationConfigFile.schema.json",
 	"accessibleLinker": true,
 	"authentication": {
-		"startup": {
-			"adapter": "PASSWORD",
-			"component": "Registration"
-		}
+    "startup": {
+      "adapter": "OAUTH2",
+    
+     "authorization_endpoint": "https://keycloak.finsemble.com/auth/realms/master/protocol/openid-connect/auth",
+    
+    "scope": "openid",
+    
+    "client_id": "finsemble",
+    
+    "backchannel_endpoint": "https://keycloak.finsemble.com/auth/realms/master/protocol/openid-connect/ext/ciba/auth",
+    
+    "redirect_uri": "https://cloud.finsemble.com/sso/oauth/response",
+    
+    "component": "Authentication"
+    }
 	},
 	"servicesConfig": {
 		"distributedStore": {

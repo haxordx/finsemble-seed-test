@@ -16,6 +16,7 @@
 		<meta name="description" content="" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<script>
+
 			/** Class for handling oAuth returns */
 			class HandleOauth {
 				constructor() {}
@@ -69,6 +70,10 @@
 				} else {
 					const credentials = response;
 					OauthClient.runBusinessLogic(credentials, () => {
+
+
+            alert(credentials);
+
 						// In the special case of "startup" then we publish the authorization, which releases Finsemble and lets is start
 						if (credentials.config.name === "startup") {
 							// "sub" is the user ID provided by the OP. Not all OP's support this. If not supported, then we just set the user to the access token.
